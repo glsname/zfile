@@ -2,7 +2,7 @@
   "version": "2.0",
   "envId": "{{env.ENV_ID}}",
   "framework": {
-    "name": "bitwarden",
+    "name": "zfile",
     "plugins": {
       "client": {
         "use": "@cloudbase/framework-plugin-container",
@@ -10,7 +10,7 @@
           "serviceName": "zfile",
           "servicePath": "/zfile",
           "uploadType": "image",
-          "containerPort": 80,
+          "containerPort": 8080,
           "imageInfo": {
             "imageUrl": "zhaojun1998/zfile:3.0"
           },
