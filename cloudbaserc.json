@@ -1,0 +1,35 @@
+{
+  "version": "2.0",
+  "envId": "{{env.ENV_ID}}",
+  "framework": {
+    "name": "bitwarden",
+    "plugins": {
+      "client": {
+        "use": "@cloudbase/framework-plugin-container",
+        "inputs": {
+          "serviceName": "zfile",
+          "servicePath": "/zfile",
+          "uploadType": "image",
+          "containerPort": 80,
+          "imageInfo": {
+            "imageUrl": "zhaojun1998/zfile:3.0"
+          },
+          "envVariables": {
+            "WEBSOCKET_ENABLED": "false"
+          },
+          "volumeMounts": {
+            "/root/zfile/db": "zfile-cfs"
+          }
+        }
+      }
+    },
+    "requirement": {
+      "addons": [
+        {
+          "type": "CFS",
+          "name": "zfile-cfs"
+        }
+      ]
+    }
+  }
+}
